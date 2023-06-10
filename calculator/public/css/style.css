@@ -1,0 +1,154 @@
+:root
+{
+    --Lsha: rgb(218, 218, 218);
+    --LC2: #555;
+    --Nsha: #111;
+    --DC2: #333;
+    --Dark: rgb(45, 41, 54);
+}
+*
+{
+    user-select: none;
+    transition: .5s;
+}
+body,html
+{
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    place-items: center;
+    height: 100vmin;
+}
+/* calculator */
+.box
+{
+    background: #fff;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    overflow-x: hidden;
+    padding: 20px 10px;
+    border-radius: 10px;
+    border: 2px solid var(--LC2);
+    box-shadow:10px -5px 5px 2px rgba(199, 193, 193, 0.534),inset 0 0 10px 5px var(--Lsha);
+}
+.display
+{
+    background: linear-gradient(135deg,rgb(140, 255, 255) ,rgb(226, 251, 251));
+    width: 95%;
+    height: 50px;
+    margin: 0 0 10px 0;
+    padding: 0 5px 0 0;
+    text-align: right;
+    border-radius: 5px;
+    border: 2px solid var(--LC2);
+    box-shadow: 0 0 10px 5px var(--Lsha);
+}
+.box div button
+{
+    width: 50px;
+    height: 45px;
+    margin: 5px 2px;
+    font-weight: bold;
+    border: 2px solid var(--LC2);
+    background: linear-gradient(var(--bgc1),var(--bgc2));
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 5px var(--Lsha);
+    cursor: pointer;
+}
+.box div button p
+{
+    background: linear-gradient(90deg,var(--bgc1),var(--bgc2));
+    padding: 8px 0;
+    margin: 0;
+    border-radius: 5px;
+}
+
+/* theme btn */
+.box .ontop 
+{
+    margin: 5px 0;
+    position: relative;
+}
+.box .ontop #Theme
+{
+    box-shadow: none;
+    height: 20px;
+    width: 20px;
+    background: var(--Dark);
+    border-radius: 100%;
+    border: transparent;
+    border: 2px solid #000;
+    position: absolute;
+    top: -28px;
+    right: -20px;
+}
+.box .ontop #Theme .N
+{
+    width: 15px;
+    height: 15px;
+    opacity: 0;
+    border-radius: 100%;
+    transform: translateX(15px);
+}
+.box .ontop #Theme .D
+{
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+    background: #fff;
+    border-radius: 100%;
+    transform: translateX(-3px) translateY(2px);
+}
+.Dark .box .ontop #Theme
+{
+    border: 2px solid var(--LC2);
+    background: #fff;
+}
+.Dark .box .ontop #Theme .N
+{
+    opacity: 1;
+    background: #000;
+    transform: translateX(0px) translateY(-10px);
+    box-shadow: inset 0 0 0 1px #000;
+}
+.Dark .box .ontop #Theme .D
+{
+    opacity: 0;
+    transform: translateX(-20px);
+    box-shadow: inset 0 0 0 1px #000;
+}
+
+/* Dark see */
+.Dark
+{
+    background: var(--Dark);
+}
+
+.Dark .box
+{
+    background: var(--DC2);
+    border: 2px solid #000;
+    box-shadow:10px -5px 5px 2px rgba(0, 0, 0, 0.5),inset 0 0 10px 5px #222;
+}
+.Dark .display
+{
+    background: linear-gradient(135deg,rgb(41, 40, 51),rgb(85, 84, 105),rgb(122, 119, 156));
+    border: 2px solid #000;
+    box-shadow: 0 0 10px 5px var(--Nsha);
+    color: #fff;
+}
+.Dark .box div button
+{
+    border: 2px solid #000;
+    box-shadow: 0 0 10px 5px var(--Nsha);
+    background: linear-gradient(var(--Dbg1),var(--Dbg2));
+}
+.Dark .box div button p
+{
+    background: linear-gradient(90deg,var(--Dbg1),var(--Dbg2));
+    color: #ccc;
+}
